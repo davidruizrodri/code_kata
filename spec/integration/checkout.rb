@@ -1,7 +1,7 @@
 require 'spec_helper'
-require_relative '../../lib/checkout'
+require_relative '../../lib/checkout/base'
 
-describe "Exercise integration specs" do
+describe Checkout::Base do
   let( :pricing_rules ) {
     {
       a: { price: 50, discount: { quantity: 3, special_price: 130 } },
@@ -11,7 +11,7 @@ describe "Exercise integration specs" do
     }
   }
 
-  subject { Checkout.new( pricing_rules ) }
+  subject { Checkout::Base.new( pricing_rules ) }
 
   context "when no discount present" do
     it "returns the expected result for the given case" do
