@@ -1,5 +1,4 @@
 require 'spec_helper'
-require_relative '../../lib/checkout/base'
 
 describe Checkout::Base do
   let( :pricing_rules ) {
